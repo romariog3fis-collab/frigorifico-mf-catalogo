@@ -46,7 +46,24 @@
   <!-- Estilos Customizados & Identidade Visual do Frigorífico MF -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="bg-noise min-h-screen text-stone-100 flex flex-col justify-between selection:bg-amber-500 selection:text-stone-950">
+<body class="bg-noise min-h-screen text-stone-100 flex flex-col justify-between selection:bg-amber-500 selection:text-stone-950 relative">
+
+  <!-- =========================================================================
+       0. VÍDEO DE FUNDO GLOBAL IMERSIVO (STEAK RESTING ON CUTTING BOARD 1080P)
+       ========================================================================= -->
+  <div class="fixed inset-0 -z-20 overflow-hidden pointer-events-none" aria-hidden="true">
+    <video 
+      autoplay 
+      loop 
+      muted 
+      playsinline 
+      poster="public/images/produtos/picanha.jpg"
+      class="w-full h-full object-cover scale-105 opacity-35 filter contrast-110 saturate-110"
+    >
+      <source src="public/videos/hero-steak.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 bg-gradient-to-b from-stone-950/60 via-stone-950/80 to-stone-950/90"></div>
+  </div>
 
   <!-- =========================================================================
        1. HEADER FIXO (LOGO BOI & BRASA, STATUS, AÇÕES & CARRINHO)
@@ -123,10 +140,27 @@
   </header>
 
   <!-- =========================================================================
-       2. HERO SECTION IMERSIVA (BOI & BRASA)
+       2. HERO SECTION IMERSIVA COM VÍDEO 1080P EM DESTAQUE (BOI & BRASA)
        ========================================================================= -->
-  <section class="relative min-h-[520px] md:min-h-[620px] flex items-center hero-gradient border-b border-stone-800/80">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 relative z-10 w-full">
+  <section class="relative min-h-[540px] md:min-h-[650px] flex items-center overflow-hidden border-b border-stone-800/80">
+    <!-- Vídeo de Fundo do Hero em Alta Nitidez -->
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none" aria-hidden="true">
+      <video 
+        autoplay 
+        loop 
+        muted 
+        playsinline 
+        poster="public/images/produtos/picanha.jpg"
+        class="w-full h-full object-cover object-center scale-105 animate-slow-zoom"
+      >
+        <source src="public/videos/hero-steak.mp4" type="video/mp4" />
+      </video>
+      <!-- Gradiente Cinematográfico Duplo para Leitura Perfeita e Destaque do Corte -->
+      <div class="absolute inset-0 bg-gradient-to-r from-stone-950/95 via-stone-950/75 to-stone-950/25"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-stone-950/40"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10 w-full">
       <div class="max-w-3xl">
         
         <!-- Eyebrow Tag -->
