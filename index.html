@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frigorífico MF | Boi & Brasa &bull; Assados na Brasa, No Bafo e Quentinhas</title>
+  <meta name="description" content="Cardápio digital oficial do Frigorífico MF Boi & Brasa em Fortaleza - CE. Picanha Argentina, Maminha, Carnes no Bafo, Baião de Dois, Quentinhas e Assados com pedidos pelo WhatsApp." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="public/images/marca/favicon.svg" />
+
+  <!-- Google Fonts: Cinzel, Playfair Display e Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              gold: '#F59E0B',
+              'gold-light': '#FDE68A',
+              'gold-dark': '#B45309',
+              ruby: '#881337',
+              'ruby-light': '#E11D48',
+              coal: '#0C0A09',
+              card: '#1C1917',
+              whatsapp: '#22C55E'
+            }
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'Georgia', 'serif'],
+            serifHeader: ['Cinzel', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Estilos Customizados & Identidade Visual do Frigorífico MF -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-noise min-h-screen text-stone-100 flex flex-col justify-between selection:bg-amber-500 selection:text-stone-950">
+
+  <!-- =========================================================================
+       1. HEADER FIXO (LOGO BOI & BRASA, STATUS, AÇÕES & CARRINHO)
+       ========================================================================= -->
+  <header class="sticky top-0 z-40 header-glass transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Marca / Logo Oficial -->
+      <a href="#" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-amber-500/50 rounded-lg py-1">
+        <div class="w-12 h-12 flex-shrink-0">
+          <img src="public/images/marca/favicon.svg" alt="Frigorífico MF Boi & Brasa" class="w-full h-full object-contain filter drop-shadow-md group-hover:scale-105 transition-transform" />
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5">
+            <span class="font-serif-display font-black text-lg sm:text-xl tracking-wider text-stone-100 group-hover:text-amber-400 transition-colors">
+              FRIGORÍFICO <span class="text-amber-400">MF</span>
+            </span>
+            <span class="text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">
+              BOI &amp; BRASA
+            </span>
+          </div>
+          <span class="text-[10px] tracking-[0.2em] text-stone-400 uppercase font-semibold">
+            Fortaleza &bull; Assados &bull; Delivery
+          </span>
+        </div>
+      </a>
+
+      <!-- Status de Atendimento & Horário (Desktop) -->
+      <div class="hidden lg:flex items-center gap-3 px-3.5 py-1.5 rounded-full bg-stone-900/80 border border-stone-800 text-xs">
+        <span class="status-pulse"></span>
+        <span class="text-stone-300 font-medium">Aberto agora (07:30 - 19:00)</span>
+        <span class="text-stone-600">|</span>
+        <span class="text-amber-400/90 text-[11px] font-semibold">WhatsApp: (85) 99692-8975</span>
+      </div>
+
+      <!-- Ações do Header: Instagram & Botão do Carrinho -->
+      <div class="flex items-center gap-3">
+        <!-- Link Instagram Oficial -->
+        <a 
+          href="https://www.instagram.com/frigorifico.mf/" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="hidden sm:flex items-center gap-2 px-3 py-2 rounded-lg bg-stone-900 border border-stone-800 text-xs font-semibold text-stone-300 hover:text-amber-400 hover:border-amber-500/30 transition"
+          title="Instagram @frigorifico.mf"
+        >
+          <svg class="w-4 h-4 text-rose-500" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          <span>@frigorifico.mf</span>
+        </a>
+
+        <!-- Botão Carrinho / Minha Lista -->
+        <button 
+          id="open-cart-btn" 
+          class="relative flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-stone-900 border border-amber-500/40 hover:border-amber-500 text-stone-100 hover:text-amber-300 transition-all shadow-md group"
+          aria-label="Abrir Minha Lista de Pedidos"
+        >
+          <div class="relative">
+            <svg class="w-5 h-5 text-amber-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+            </svg>
+            <span 
+              id="cart-badge" 
+              class="hidden absolute -top-2 -right-2.5 w-5 h-5 bg-emerald-500 text-white rounded-full text-[11px] font-black items-center justify-center shadow-md animate-pulse"
+            >
+              0
+            </span>
+          </div>
+          <span class="hidden md:inline text-xs font-bold uppercase tracking-wider">Minha Lista</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. HERO SECTION IMERSIVA (BOI & BRASA)
+       ========================================================================= -->
+  <section class="relative min-h-[520px] md:min-h-[620px] flex items-center hero-gradient border-b border-stone-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 relative z-10 w-full">
+      <div class="max-w-3xl">
+        
+        <!-- Eyebrow Tag -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-stone-900/90 border border-amber-500/40 text-amber-300 text-xs font-semibold tracking-wider uppercase mb-6 shadow-lg backdrop-blur-sm">
+          <span class="text-base">🔥</span> Assados na Brasa &bull; No Bafo &bull; Quentinhas Executivas
+        </div>
+
+        <!-- Headline de Alto Impacto -->
+        <h1 class="font-serif-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-stone-100 leading-[1.05] tracking-tight mb-6">
+          O Verdadeiro Sabor <br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-600">Boi &amp; Brasa</span> 
+          de Fortaleza.
+        </h1>
+
+        <!-- Descrição Sensorial -->
+        <p class="text-base sm:text-lg text-stone-300 leading-relaxed font-light mb-8 max-w-2xl">
+          Picanha Argentina assada no ponto nobre, Cupim e Costela derretendo no bafo, Baião de Dois cremoso e quentinhas fartas. Faça seu pedido e receba pelo nosso Delivery oficial!
+        </p>
+
+        <!-- Ações do Hero -->
+        <div class="flex flex-wrap items-center gap-4">
+          <a 
+            href="#catalogo-section" 
+            id="hero-catalog-cta"
+            class="px-8 py-4 rounded-xl btn-gold text-stone-950 font-bold text-sm tracking-wider uppercase flex items-center gap-3 shadow-xl hover:shadow-amber-500/30"
+          >
+            <span>Ver Cardápio Completo</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+          </a>
+
+          <a 
+            href="https://wa.me/5585996928975?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20no%20Frigor%C3%ADfico%20MF%20Boi%20%26%20Brasa!" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="px-6 py-4 rounded-xl bg-stone-900/90 hover:bg-stone-800 text-stone-200 border border-stone-700/80 hover:border-emerald-500/50 text-sm font-semibold tracking-wide flex items-center gap-2.5 transition backdrop-blur-sm"
+          >
+            <svg class="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+            </svg>
+            <span>WhatsApp (85) 99692-8975</span>
+          </a>
+        </div>
+
+        <!-- Endereço e Destaques no Hero -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10 pt-6 border-t border-white/10 text-xs">
+          <div class="flex items-center gap-2.5">
+            <span class="text-amber-400 text-lg">📍</span>
+            <span class="text-stone-300 font-medium">R. Benjamim Brasil, 1090 - Jardim Cearense</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="text-amber-400 text-lg">⏰</span>
+            <span class="text-stone-300 font-medium">Seg a Sáb: 07:30 às 19:00</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="text-amber-400 text-lg">🛵</span>
+            <span class="text-stone-300 font-medium">Delivery Rápido p/ Toda Região</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       3. BARRA DE BUSCA, FILTROS & ORDENAÇÃO
+       ========================================================================= -->
+  <section id="catalogo-section" class="pt-10 pb-6 bg-stone-950/70 border-b border-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Linha 1: Título e Busca -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+        <div>
+          <div class="flex items-center gap-2 text-xs text-amber-500 font-bold uppercase tracking-widest mb-1">
+            <span>Cardápio Oficial</span> &bull; <span>Boi &amp; Brasa</span>
+          </div>
+          <h2 class="font-serif-display text-2xl sm:text-3xl font-bold text-stone-100">
+            Escolha Seus Assados e Refeições
+          </h2>
+        </div>
+
+        <!-- Campo de Busca em Tempo Real -->
+        <div class="flex items-center gap-3 w-full md:w-80">
+          <div class="relative w-full">
+            <input 
+              type="text" 
+              id="search-input" 
+              placeholder="Buscar picanha, cupim, baião, quentinha..." 
+              class="w-full h-11 pl-10 pr-9 rounded-xl bg-stone-900 border border-stone-800 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 text-stone-100 placeholder-stone-500 text-xs transition"
+            />
+            <svg class="w-4 h-4 text-stone-500 absolute left-3.5 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+            <button 
+              id="clear-search" 
+              class="hidden absolute right-3 top-3.5 text-stone-500 hover:text-stone-200"
+              title="Limpar busca"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+          </div>
+
+          <!-- Select de Ordenação -->
+          <div class="hidden sm:block">
+            <select 
+              id="sort-select" 
+              class="h-11 px-3 rounded-xl bg-stone-900 border border-stone-800 text-stone-300 text-xs focus:border-amber-500 focus:ring-1 focus:ring-amber-500 cursor-pointer"
+            >
+              <option value="featured">Destaques</option>
+              <option value="price-asc">Menor Preço</option>
+              <option value="price-desc">Maior Preço</option>
+              <option value="name-asc">Ordem A-Z</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Linha 2: Pílulas de Categorias (Scroll Horizontal) -->
+      <div class="relative">
+        <div id="categories-container" class="flex items-center gap-2 overflow-x-auto pb-3 pt-1 scrollbar-none no-scrollbar">
+          <!-- Renderizado via JS -->
+        </div>
+      </div>
+
+      <!-- Linha 3: Contador de Resultados -->
+      <div class="mt-4 flex items-center justify-between text-xs text-stone-400">
+        <span id="products-count">Carregando itens...</span>
+        <span class="italic text-[11px] text-stone-500">Valores oficiais conforme Cardápio Digital</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. VITRINE DE PRODUTOS
+       ========================================================================= -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-1 w-full">
+    <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <!-- Renderizado via JS -->
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       5. SEÇÃO DE DIFERENCIAIS
+       ========================================================================= -->
+  <section class="bg-stone-900/60 border-y border-stone-800/80 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-amber-500 text-xs font-bold uppercase tracking-widest block mb-2">Qualidade &bull; Tradição &bull; Sabor</span>
+        <h2 class="font-serif-display text-3xl font-bold text-stone-100 mb-3">Diferenciais Frigorífico MF</h2>
+        <p class="text-stone-400 text-sm">Do braseiro quente à marmita executiva na sua mesa: paixão pela culinária cearense e carnes nobres.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        
+        <div class="p-6 rounded-2xl bg-stone-900 border border-stone-800/80 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-xl mb-4 font-black">
+              01
+            </div>
+            <h3 class="font-display text-lg font-bold text-stone-100 mb-2">Assados na Brasa Viva</h3>
+            <p class="text-xs text-stone-400 leading-relaxed">
+              Picanha Argentina, Maminha, Contra Filé e Caicó assados no carvão em braseiro forte, mantendo todo o suco da carne.
+            </p>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-stone-900 border border-stone-800/80 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400 flex items-center justify-center text-xl mb-4 font-black">
+              02
+            </div>
+            <h3 class="font-display text-lg font-bold text-stone-100 mb-2">Cozimento Lento no Bafo</h3>
+            <p class="text-xs text-stone-400 leading-relaxed">
+              Cupim, Costela Bovina e Carne do Sol preparados pacientemente por horas no bafo até desmanchar ao toque do garfo.
+            </p>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-stone-900 border border-stone-800/80 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl mb-4 font-black">
+              03
+            </div>
+            <h3 class="font-display text-lg font-bold text-stone-100 mb-2">Guarnições Regionais</h3>
+            <p class="text-xs text-stone-400 leading-relaxed">
+              Baião de dois autêntico com queijo coalho, feijoada rica, panelada tradicional, farofa da vovó e purê artesanal.
+            </p>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-stone-900 border border-stone-800/80 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-xl mb-4 font-black">
+              04
+            </div>
+            <h3 class="font-display text-lg font-bold text-stone-100 mb-2">Delivery Ágil Fortaleza</h3>
+            <p class="text-xs text-stone-400 leading-relaxed">
+              Embalagens térmicas seguras para que seu almoço e churrasco cheguem quentes, suculentos e bem servidos.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       6. CARRINHO LATERAL (SLIDE-OVER DRAWER) + CHECKOUT WHATSAPP
+       ========================================================================= -->
+  <aside 
+    id="cart-drawer" 
+    class="drawer-backdrop fixed inset-0 z-50 flex justify-end"
+    aria-hidden="true"
+  >
+    <div class="drawer-panel w-full max-w-md h-full flex flex-col justify-between bg-stone-950 border-l border-stone-800 overflow-hidden">
+      
+      <!-- Cabeçalho do Drawer -->
+      <div class="p-5 border-b border-stone-800 flex items-center justify-between bg-stone-900/60">
+        <div class="flex items-center gap-2.5">
+          <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+          </svg>
+          <h2 class="font-serif-display font-bold text-lg text-stone-100">Minha Lista de Pedidos</h2>
+        </div>
+
+        <button 
+          id="close-cart-btn" 
+          class="p-2 text-stone-400 hover:text-stone-100 rounded-lg hover:bg-stone-800 transition"
+          aria-label="Fechar Lista"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- Corpo do Drawer: Lista de Itens -->
+      <div class="flex-1 overflow-y-auto p-5 space-y-4">
+        
+        <!-- Estado Vazio -->
+        <div id="cart-empty-state" class="py-16 text-center text-stone-400">
+          <div class="w-16 h-16 rounded-full bg-stone-900 border border-stone-800 flex items-center justify-center mx-auto mb-4 text-stone-500">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+          </div>
+          <h3 class="font-display font-bold text-stone-200 text-base mb-1">Sua lista está vazia</h3>
+          <p class="text-xs text-stone-500 max-w-xs mx-auto">Adicione assados, guarnições ou quentinhas para calcular o valor e enviar pelo WhatsApp.</p>
+        </div>
+
+        <!-- Lista Dinâmica de Cortes -->
+        <div id="cart-items-container" class="space-y-3 hidden">
+          <!-- Renderizado via JS -->
+        </div>
+
+        <!-- Formulário do Cliente & Preferências -->
+        <div id="cart-checkout-form" class="mt-6 pt-6 border-t border-stone-800/80 space-y-4">
+          <h3 class="text-xs font-bold uppercase tracking-wider text-amber-400">Dados para Atendimento</h3>
+          
+          <!-- Nome do Cliente -->
+          <div>
+            <label for="client-name" class="block text-[11px] font-semibold text-stone-300 mb-1">Seu Nome / Como prefere ser chamado</label>
+            <input 
+              type="text" 
+              id="client-name" 
+              placeholder="Ex: Carlos Oliveira" 
+              class="w-full h-9 px-3 rounded-lg bg-stone-900 border border-stone-800 focus:border-amber-500 text-stone-100 placeholder-stone-600 text-xs"
+            />
+          </div>
+
+          <!-- Tipo de Entrega (Retirada vs Delivery) -->
+          <div>
+            <span class="block text-[11px] font-semibold text-stone-300 mb-1.5">Modalidade de Recebimento</span>
+            <div class="grid grid-cols-2 gap-2">
+              <label class="flex items-center gap-2 p-2 rounded-lg bg-stone-900 border border-stone-800 hover:border-amber-500/40 cursor-pointer text-xs">
+                <input type="radio" name="delivery-type" value="retirada" checked class="text-amber-500 focus:ring-amber-500" />
+                <span class="text-stone-300 font-medium">🏪 Retirar na Loja</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 rounded-lg bg-stone-900 border border-stone-800 hover:border-amber-500/40 cursor-pointer text-xs">
+                <input type="radio" name="delivery-type" value="delivery" class="text-amber-500 focus:ring-amber-500" />
+                <span class="text-stone-300 font-medium">🛵 Delivery</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Endereço para Delivery (Condicional) -->
+          <div id="delivery-address-container" class="space-y-2 hidden">
+            <div>
+              <label for="client-address" class="block text-[11px] font-semibold text-stone-300 mb-1">Endereço e Número</label>
+              <input 
+                type="text" 
+                id="client-address" 
+                placeholder="Rua, Número e Complemento" 
+                class="w-full h-9 px-3 rounded-lg bg-stone-900 border border-stone-800 focus:border-amber-500 text-stone-100 placeholder-stone-600 text-xs"
+              />
+            </div>
+            <div>
+              <label for="client-neighborhood" class="block text-[11px] font-semibold text-stone-300 mb-1">Bairro em Fortaleza</label>
+              <input 
+                type="text" 
+                id="client-neighborhood" 
+                placeholder="Ex: Jardim Cearense, Maraponga, Parangaba..." 
+                class="w-full h-9 px-3 rounded-lg bg-stone-900 border border-stone-800 focus:border-amber-500 text-stone-100 placeholder-stone-600 text-xs"
+              />
+            </div>
+          </div>
+
+          <!-- Forma de Pagamento Prevista -->
+          <div>
+            <label for="payment-method" class="block text-[11px] font-semibold text-stone-300 mb-1">Pagamento Previsto</label>
+            <select 
+              id="payment-method" 
+              class="w-full h-9 px-3 rounded-lg bg-stone-900 border border-stone-800 text-stone-300 text-xs focus:border-amber-500"
+            >
+              <option value="PIX">PIX (Chave imediata)</option>
+              <option value="Cartão de Crédito">Cartão de Crédito</option>
+              <option value="Cartão de Débito">Cartão de Débito</option>
+              <option value="Dinheiro">Dinheiro</option>
+            </select>
+          </div>
+
+          <!-- Observações do Corte / Pedido -->
+          <div>
+            <label for="client-notes" class="block text-[11px] font-semibold text-stone-300 mb-1">Observações do Pedido (Opcional)</label>
+            <textarea 
+              id="client-notes" 
+              rows="2" 
+              placeholder="Ex: Carne bem passada, enviar talheres descartáveis, troco para 50..." 
+              class="w-full p-2.5 rounded-lg bg-stone-900 border border-stone-800 focus:border-amber-500 text-stone-100 placeholder-stone-600 text-xs resize-none"
+            ></textarea>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Rodapé do Drawer: Totais e Botão WhatsApp -->
+      <div id="cart-footer" class="p-5 border-t border-stone-800 bg-stone-900/95 space-y-3">
+        
+        <div class="space-y-1.5 text-xs">
+          <div class="flex items-center justify-between text-stone-400">
+            <span>Peso / Quantidade Estimada:</span>
+            <span id="cart-weight" class="font-semibold text-stone-200">~0,00 kg</span>
+          </div>
+          <div class="flex items-baseline justify-between text-stone-100">
+            <span class="font-bold text-sm">Total Estimado:</span>
+            <span id="cart-subtotal" class="font-display font-black text-2xl text-amber-400">R$ 0,00</span>
+          </div>
+          <p class="text-[10px] text-stone-500 leading-tight">
+            *Nos cortes por kg (pesagem na balança), o valor final é confirmado no WhatsApp.
+          </p>
+        </div>
+
+        <!-- Botão WhatsApp Oficial -->
+        <a 
+          id="whatsapp-checkout-btn" 
+          href="#" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="w-full py-3.5 rounded-xl btn-whatsapp flex items-center justify-center gap-2.5 text-sm uppercase tracking-wide shadow-lg"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+          </svg>
+          <span>Enviar Pedido para WhatsApp</span>
+        </a>
+
+        <div class="flex items-center justify-between pt-1">
+          <button id="clear-cart-btn" class="text-[11px] text-stone-500 hover:text-rose-400 transition">
+            Limpar todos os itens
+          </button>
+          <span class="text-[10px] text-stone-500">🔒 (85) 99692-8975</span>
+        </div>
+
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       7. MODAL DE DETALHES RÁPIDOS (QUICK VIEW)
+       ========================================================================= -->
+  <div 
+    id="quickview-modal" 
+    class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4"
+    aria-hidden="true"
+  >
+    <div class="modal-content w-full max-w-3xl rounded-2xl overflow-hidden relative shadow-2xl">
+      <!-- Botão Fechar -->
+      <button 
+        id="close-quickview-btn" 
+        class="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-stone-900/80 border border-stone-700 text-stone-300 hover:text-white flex items-center justify-center transition"
+        aria-label="Fechar Detalhes"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+
+      <div id="quickview-content">
+        <!-- Renderizado dinamicamente pelo JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Container de Toasts Flutuantes -->
+  <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- =========================================================================
+       8. RODAPÉ INSTITUCIONAL (LOCALIZAÇÃO, HORÁRIOS, INSTAGRAM & LGPD)
+       ========================================================================= -->
+  <footer class="bg-stone-950 border-t border-stone-800 text-stone-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+        
+        <!-- Coluna 1: Marca & Manifesto -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="font-serif-display font-black text-lg text-stone-100 tracking-wider">
+              FRIGORÍFICO <span class="text-amber-400">MF</span>
+            </span>
+            <span class="text-[10px] font-bold uppercase px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">
+              BOI &amp; BRASA
+            </span>
+          </div>
+          <p class="text-xs text-stone-400 leading-relaxed font-light">
+            O melhor dos assados na brasa, carnes no bafo, guarnições típicas e quentinhas executivas em Fortaleza. Tradição, fartura e maciez comprovada.
+          </p>
+          <div class="pt-2">
+            <a 
+              href="https://www.instagram.com/frigorifico.mf/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="inline-flex items-center gap-2 text-stone-300 hover:text-amber-400 transition"
+            >
+              <svg class="w-4 h-4 text-rose-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              <span class="font-medium text-xs">@frigorifico.mf no Instagram</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Coluna 2: Horários de Atendimento -->
+        <div class="space-y-2">
+          <h4 class="font-display font-bold text-stone-200 text-sm">Horário de Funcionamento</h4>
+          <p class="text-stone-300">
+            <b class="text-amber-400">Segunda a Sábado:</b><br />
+            07:30 às 19:00 (Ininterrupto)
+          </p>
+          <p class="text-stone-300">
+            <b class="text-amber-400">Domingos e Feriados:</b><br />
+            07:30 às 14:00 (Assados do almoço)
+          </p>
+        </div>
+
+        <!-- Coluna 3: Endereço & Retirada -->
+        <div class="space-y-2">
+          <h4 class="font-display font-bold text-stone-200 text-sm">Localização Oficial</h4>
+          <p class="text-stone-300">
+            R. Benjamim Brasil, 1090<br />
+            Jardim Cearense, Fortaleza - CE<br />
+            CEP: 60712-003
+          </p>
+          <a 
+            href="https://maps.google.com/?q=R.+Benjamim+Brasil,+1090+-+Jardim+Cearense,+Fortaleza+-+CE" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="text-amber-400 hover:underline text-[11px] font-semibold block"
+          >
+            📍 Ver no Google Maps &rarr;
+          </a>
+        </div>
+
+        <!-- Coluna 4: Atendimento Rápido WhatsApp -->
+        <div class="space-y-3">
+          <h4 class="font-display font-bold text-stone-200 text-sm">Delivery &amp; WhatsApp Oficial</h4>
+          <p class="text-xs text-stone-400">
+            Faça seu pedido diretamente com nossa equipe de atendimento Boi &amp; Brasa:
+          </p>
+          <a 
+            href="https://wa.me/5585996928975?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20no%20Frigor%C3%ADfico%20MF%20Boi%20%26%20Brasa!" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition shadow-md"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+            <span>(85) 99692-8975</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Barra Inferior de Direitos & LGPD -->
+      <div class="pt-8 border-t border-stone-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-stone-500">
+        <div>
+          &copy; 2026 Frigorífico MF | Boi &amp; Brasa. Todos os direitos reservados.
+        </div>
+        <div class="text-center sm:text-right max-w-xl">
+          <p>
+            <b>Privacidade & LGPD:</b> Os dados inseridos no carrinho são utilizados unicamente para gerar a mensagem de atendimento no seu WhatsApp. Não gravamos nem compartilhamos dados sensíveis em bancos externos.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts da Aplicação (Config, Produtos, Carrinho e Core) -->
+  <script src="js/config.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

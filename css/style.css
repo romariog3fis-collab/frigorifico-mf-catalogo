@@ -1,0 +1,313 @@
+/* ==========================================================================
+   FRIGORÍFICO MF - FOLHA DE ESTILOS & IDENTIDADE VISUAL
+   Direção de Arte: Cinematográfico / Boutique Gastronômica & Artesanal
+   ========================================================================== */
+
+:root {
+  /* Paleta Mineral Quente & Brasa Nobre */
+  --bg-main: #0C0A09;            /* Stone 950 - Carvão Profundo Mineral */
+  --bg-secondary: #141110;       /* Tom intermediário para seções */
+  --surface-card: #1C1917;       /* Stone 900 - Fundo dos Cards e Drawer */
+  --surface-card-hover: #292524; /* Stone 800 */
+  --surface-elevated: #24201E;   /* Superfícies destacadas e modais */
+  
+  /* Acentos de Luxo & Fogo */
+  --accent-gold: #F59E0B;        /* Âmbar Ouro Brasa */
+  --accent-gold-light: #FDE68A;  /* Iluminação Dourada */
+  --accent-gold-dark: #B45309;   /* Dourado Envelhecido */
+  --accent-ruby: #881337;        /* Rose 900 - Vinho Tinto / Sangue Nobre */
+  --accent-ruby-light: #E11D48;  /* Carmim Intenso */
+  --accent-whatsapp: #22C55E;    /* Verde Oficial WhatsApp de Conversão */
+  --accent-whatsapp-hover: #16A34A;
+
+  /* Bordas e Divisões Sutis */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-gold: rgba(245, 158, 11, 0.25);
+  --border-ruby: rgba(225, 29, 72, 0.25);
+
+  /* Tipografia & Textos */
+  --text-main: #F5F5F4;          /* Stone 100 - Branco Quente */
+  --text-muted: #A8A29E;         /* Stone 400 - Cinza Quente */
+  --text-dark: #78716C;          /* Stone 500 */
+  
+  /* Sombras Cinematográficas */
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.8), 0 0 1px 1px rgba(255, 255, 255, 0.05);
+  --shadow-gold-glow: 0 0 25px rgba(245, 158, 11, 0.25);
+  --shadow-drawer: -10px 0 40px rgba(0, 0, 0, 0.9);
+}
+
+/* Tipografia Base */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-serif-display {
+  font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+}
+
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Efeito de Grão / Textura de Fundo Sutil */
+.bg-noise {
+  background-image: radial-gradient(circle at 50% 0%, rgba(136, 19, 55, 0.15) 0%, transparent 60%),
+                    radial-gradient(circle at 100% 50%, rgba(245, 158, 11, 0.08) 0%, transparent 45%),
+                    radial-gradient(circle at 0% 100%, rgba(136, 19, 55, 0.1) 0%, transparent 50%);
+}
+
+/* Header Fixo com Efeito Vidro Escuro */
+.header-glass {
+  background: rgba(12, 10, 9, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* Hero Section */
+.hero-gradient {
+  background: linear-gradient(180deg, rgba(12, 10, 9, 0.3) 0%, rgba(12, 10, 9, 0.85) 75%, var(--bg-main) 100%),
+              url('https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1920&q=85') center/cover no-repeat;
+}
+
+/* Cards Gastronômicos */
+.product-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.35s ease, 
+              box-shadow 0.35s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-gold);
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.9), var(--shadow-gold-glow);
+}
+
+/* Proporção 4:3 com Zoom Suave na Foto */
+.aspect-4-3 {
+  aspect-ratio: 4 / 3;
+  position: relative;
+  overflow: hidden;
+  background-color: #171412;
+}
+
+.aspect-4-3 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover .aspect-4-3 img {
+  transform: scale(1.08);
+}
+
+/* Selos Visuais Gastronômicos (Badges) */
+.badge-gold {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(180, 83, 9, 0.4));
+  color: var(--accent-gold-light);
+  border: 1px solid var(--accent-gold);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}
+
+.badge-ruby {
+  background: linear-gradient(135deg, rgba(225, 29, 72, 0.25), rgba(136, 19, 55, 0.45));
+  color: #FECDD3;
+  border: 1px solid var(--accent-ruby-light);
+}
+
+.badge-green {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(22, 101, 52, 0.35));
+  color: #BBF7D0;
+  border: 1px solid rgba(34, 197, 94, 0.5);
+}
+
+/* Botões Customizados */
+.btn-gold {
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  color: #0C0A09;
+  font-weight: 700;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.25);
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+}
+
+.btn-whatsapp {
+  background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+  color: #FFFFFF;
+  font-weight: 700;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 20px rgba(34, 197, 94, 0.3);
+}
+
+.btn-whatsapp:hover {
+  background: linear-gradient(135deg, #4ADE80 0%, #22C55E 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(34, 197, 94, 0.5);
+}
+
+/* Pílulas de Filtros */
+.filter-btn {
+  background: rgba(28, 25, 23, 0.8);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  color: var(--text-main);
+  border-color: rgba(245, 158, 11, 0.4);
+  background: var(--surface-card-hover);
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(136, 19, 55, 0.25));
+  border-color: var(--accent-gold);
+  color: var(--accent-gold-light);
+  font-weight: 600;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.15);
+}
+
+/* Drawer do Carrinho Lateral */
+.drawer-backdrop {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+}
+
+.drawer-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.drawer-panel {
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  background: var(--surface-card);
+  box-shadow: var(--shadow-drawer);
+}
+
+.drawer-backdrop.open .drawer-panel {
+  transform: translateX(0);
+}
+
+/* Modal de Detalhes Rápidos (Quick View) */
+.modal-backdrop {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+.modal-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  transform: scale(0.92) translateY(20px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-gold);
+}
+
+.modal-backdrop.open .modal-content {
+  transform: scale(1) translateY(0);
+}
+
+/* Pulse do Aberto Agora */
+.status-pulse {
+  width: 9px;
+  height: 9px;
+  background-color: #22C55E;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+.status-pulse::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: rgba(34, 197, 94, 0.6);
+  animation: pulse-ring 2s infinite ease-out;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.7); opacity: 1; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* Animações de Entrada (Reveal on Scroll) */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-item.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #292524;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold);
+}
+
+/* Feedback de Item Adicionado */
+@keyframes added-bounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); background-color: var(--accent-whatsapp); color: white; }
+  100% { transform: scale(1); }
+}
+
+.btn-added {
+  animation: added-bounce 0.5s ease;
+}
+
+/* Acessibilidade: Respeito a Redução de Movimento */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
